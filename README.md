@@ -18,9 +18,9 @@
 - 사용할 라이브러리: Axios(서버 통신), react-router-dom(라우터 기능), context API(전역 상태 관리), styled-components(스타일 시트)
 - 협업 방식: git flow를 통한 브랜치 분할
 - 역할 분담: 
-   *김연홍 - Detail component 제작 및 디자인 기획 
-   *박주희 - Main component 제작 및 디자인 기획 
-   *부재희 - Detail component 제작 및 디자인 기획
-   *정재현 - Common compoenent 제작 및 React 개발 환경 세팅 
+   - 김연홍) Detail component 제작 및 디자인 기획 
+   - 박주희) Main component 제작 및 디자인 기획 
+   - 부재희) Detail component 제작 및 디자인 기획
+   - 정재현) Common compoenent 제작 및 React 개발 환경 세팅 
 
 [임시 시안] (https://www.figma.com/file/FIbBCzhiF4Tgxc6Szdz2lv/Untitled?node-id=0%3A1) 
