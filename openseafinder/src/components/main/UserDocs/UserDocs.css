@@ -1,0 +1,41 @@
+.userDocs {
+    width: 100%;
+    height: 60vh;
+}
+
+.userDocsHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+}
+
+.userDocsTitle {
+    margin-bottom: 24px;
+}
+
+.userDocsTitle span {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.userDocsDesc span {
+    font-size: 24px;
+}
+
+.userDocsBody {
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardItem {
+    width: 20%;
+    background-color: #f2f5ff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+}
