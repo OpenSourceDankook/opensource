@@ -22,4 +22,9 @@
     font-size: 24px;
     color: #fff;
     font-weight: 800;
+    cursor: default;
+}
+
+.menuItem span:hover{
+    color:rgb(179, 179, 179);
 }
