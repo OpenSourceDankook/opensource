@@ -1,11 +1,19 @@
 import React from "react";
-import MainBody from "../../components/main/MainBody";
+// import MainBody from "../../components/main/MainBody";
+import Header from "../../components/common/Header/Header";
+import Banner from "../../components/main/Banner/Banner";
+import UserDocs from "../../components/main/UserDocs";
+import DevDocs from "../../components/main/UserDocs";
+import "./Main.css";
 
 function Main() {
     return (
-        <>
-            <div>메인페이지 입니다</div>
-        </>
+        <div className="main">
+            <Header />
+            <Banner />
+            <UserDocs />
+            <DevDocs />
+        </div>
     );
 }
 
