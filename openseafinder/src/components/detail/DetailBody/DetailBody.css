@@ -1,0 +1,7 @@
+.DetailBody {
+  width: 100%;
+  height: 100vh;
+  background-color: #d8dae6;
+  background-size: cover;
+  display: flex;
+}
