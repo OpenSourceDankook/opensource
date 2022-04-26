@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 import "./Main.css";
 
 function Main() {
-    return (
-        <div className="main">
-            <Header />
-            <Banner />
-            <UserDocs />
-            <DevDocs />
-        </div>
-    );
+  return (
+    <div className="main">
+      <Header />
+      <Banner />
+      <UserDocs />
+      <DevDocs />
+    </div>
+  );
 }
 
 export default Main;
