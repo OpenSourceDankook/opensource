@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #d8dae6;
+  background-color: #e8eaf3;
 }
 
 .devDocsHeader {
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f2f5ff;
+  background-color: white;
   width: 70%;
   height: 40%;
   font-size: 24px;
