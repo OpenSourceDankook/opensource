@@ -6,13 +6,16 @@ function Header() {
   function detailClick(e) {
     window.location.href = "/detail";
   }
+  function detailSWClick(e) {
+    window.location.href = "/detail_SW";
+  }
   function docsClick(e) {
     window.location.href = "/main";
   }
   return (
     <div className="header">
       <div className="menuWrapper">
-        <div className="menuItem" onClick={detailClick}>
+        <div className="menuItem" onClick={detailSWClick}>
           <span>Search Wallet</span>
         </div>
         <div className="menuItem" onClick={detailClick}>
