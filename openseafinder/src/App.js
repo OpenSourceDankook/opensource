@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { OpenseaContextProvider } from "./context/opnseaContext";
 import Main from "./pages/main/Main.jsx";
 import Detail from "./pages/detail/Detail.jsx";
 import Detail_SW from "./pages/detail/Detail_SW.jsx";
@@ -7,13 +8,15 @@ import "./App.css";
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route exact path="/main" element={<Main />} />
-                <Route exact path="/detail" element={<Detail />} />
-                <Route exact path="/detail_SW" element={<Detail_SW />} />
-            </Routes>
-        </Router>
+        <OpenseaContextProvider>
+            <Router>
+                <Routes>
+                    <Route exact path="/main" element={<Main />} />
+                    <Route exact path="/detail" element={<Detail />} />
+                    <Route exact path="/detail_SW" element={<Detail_SW />} />
+                </Routes>
+            </Router>
+        </OpenseaContextProvider>
     );
 }
 

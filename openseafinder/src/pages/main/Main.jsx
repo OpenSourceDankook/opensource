@@ -1,5 +1,5 @@
-import React from "react";
-// import MainBody from "../../components/main/MainBody";
+import React, { useContext } from "react";
+import { OpenseaContext } from "../../context/opnseaContext";
 import Header from "../../components/common/Header/Header";
 import Banner from "../../components/main/Banner/Banner";
 import UserDocs from "../../components/main/UserDocs/UserDocs";
@@ -8,14 +8,16 @@ import { Link } from "react-router-dom";
 import "./Main.css";
 
 function Main() {
-  return (
-    <div className="main">
-      <Header />
-      <Banner />
-      <UserDocs />
-      <DevDocs />
-    </div>
-  );
+    const { nftData } = useContext(OpenseaContext);
+    console.log(nftData, "Data Status");
+    return (
+        <div className="main">
+            <Header />
+            <Banner />
+            <UserDocs />
+            <DevDocs />
+        </div>
+    );
 }
 
 export default Main;
