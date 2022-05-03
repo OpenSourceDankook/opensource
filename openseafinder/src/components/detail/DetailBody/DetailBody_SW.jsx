@@ -21,9 +21,7 @@ function DetailBody_SW() {
           <label for="search" class="form__label">Search</label>
           <div onClick={searchWalletClick}><FontAwesomeIcon icon={faSearch} size="2x"/></div>
         </div>
-        
       </div>
-
     </div>
   );
 }
