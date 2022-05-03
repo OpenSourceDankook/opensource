@@ -24,8 +24,8 @@ function DetailBody_SW() {
           <input type="input" class="form__field" placeholder="search" name="search" id='search' required />
           <label for="search" class="form__label">Search</label>
           <div onClick={searchWalletClick}><FontAwesomeIcon icon={faSearch} size="2x"/></div>
-          <div id ='result'></div>
         </div>
+        <div id ='result'></div>
       </div>
     </div>
   );
