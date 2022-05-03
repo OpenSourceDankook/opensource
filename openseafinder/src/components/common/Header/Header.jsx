@@ -11,6 +11,7 @@ function Header() {
   }
   function docsClick(e) {
     window.location.href = "/";
+    //document.body.scrollTop = document.body.scrollHeight;
   }
   return (
     <div className="header">
