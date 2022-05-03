@@ -11,7 +11,7 @@ function App() {
         <OpenseaContextProvider>
             <Router>
                 <Routes>
-                    <Route exact path="/main" element={<Main />} />
+                    <Route exact path="/" element={<Main />} />
                     <Route exact path="/detail" element={<Detail />} />
                     <Route exact path="/detail_SW" element={<Detail_SW />} />
                 </Routes>

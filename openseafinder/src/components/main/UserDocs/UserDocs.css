@@ -2,6 +2,7 @@
   width: 100%;
   height: 60vh;
   background-color: #e8eaf3;
+  padding-bottom: 50px;
 }
 
 .userDocsHeader {
@@ -27,17 +28,32 @@
 }
 
 .userDocsBody {
-  height: 60%;
+  height: 350px;
   display: flex;
+  padding-left:10%;
+  padding-right:10%;
   justify-content: space-around;
 }
 
 .cardItem {
-  width: 20%;
+  width: 250px;
   background-color: #ffffff;
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  padding-top: 24px;
-  white-space: pre-line;
+  padding: 24px;
+  
+}
+
+.cardTitle{
+  width:100%;
+  height:50px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.cardDetail{
+  width:100%;
+  height:80px;
+  margin:0 auto;
+  line-height:170%;
 }

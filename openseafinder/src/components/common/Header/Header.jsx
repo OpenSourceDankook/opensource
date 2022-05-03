@@ -10,7 +10,7 @@ function Header() {
     window.location.href = "/detail_SW";
   }
   function docsClick(e) {
-    window.location.href = "/main";
+    window.location.href = "/";
   }
   return (
     <div className="header">
