@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DetailBody.css";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function DetailBody_SW() {
   function searchWalletClick(e) {
-    window.location.href = "/main";
+    const search = document.getElementById('search').value;
+    document.getElementById("result").innerText = search;
+    //window.location.href = "/main";
     //일단 main 페이지로 해놓음. => 아래에 카드가 뜨게끔 해야 함.
   }
+  const [searchTerm, setSearchTerm] = useState("");
+  
   return (
     <div className="DetailBody">
       <div className="search">
@@ -20,6 +24,7 @@ function DetailBody_SW() {
           <input type="input" class="form__field" placeholder="search" name="search" id='search' required />
           <label for="search" class="form__label">Search</label>
           <div onClick={searchWalletClick}><FontAwesomeIcon icon={faSearch} size="2x"/></div>
+          <div id ='result'></div>
         </div>
       </div>
     </div>
