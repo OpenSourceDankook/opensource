@@ -20,9 +20,9 @@ function DetailBody_SW() {
             <span>확인하려고 하는 NFT 지갑 주소를 입력하세요.</span>
           </div>
         </div>
-        <div class="form__group field">
-          <input type="input" class="form__field" placeholder="search" name="search" id='search' required />
-          <label for="search" class="form__label">Search</label>
+        <div className="form__group field">
+          <input type="input" className="form__field" placeholder="search" name="search" id='search' required />
+          <label for="search" className="form__label">Search</label>
           <div onClick={searchWalletClick}><FontAwesomeIcon icon={faSearch} size="2x"/></div>
         </div>
         <div id ='result'></div>
