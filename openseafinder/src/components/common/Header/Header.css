@@ -25,7 +25,10 @@
     cursor: default;
 }
 
-.menuItem span:hover{
-    color:rgb(179, 179, 179);
+.menuItem span:hover {
+    color: rgb(179, 179, 179);
     cursor: pointer;
+}
+a {
+    text-decoration: none !important;
 }
