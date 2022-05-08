@@ -5,11 +5,15 @@ import Banner from "../../components/main/Banner/Banner";
 import UserDocs from "../../components/main/UserDocs/UserDocs";
 import DevDocs from "../../components/main/DevDocs/DevDocs";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
 import "./Main.css";
+
+
 
 function Main() {
     const { nftData } = useContext(OpenseaContext);
     console.log(nftData, "Data Status");
+
     return (
         <div className="main">
             <Header />
