@@ -1,17 +1,28 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./DetailBody.css";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Spinner } from "reactstrap";
+import Card from "../Card";
 
 function DetailBody_SW() {
-    function searchWalletClick(e) {
-        const search = document.getElementById("search").value;
-        document.getElementById("result").innerText = search;
-        //window.location.href = "/main";
-        //일단 main 페이지로 해놓음. => 아래에 카드가 뜨게끔 해야 함.
-    }
-    const [searchTerm, setSearchTerm] = useState("");
+    const [walletAddress, setWalletAddress] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [assets, setAssets] = useState([]);
 
+    const fetchWalletInfo = () => {
+        setLoading(true);
+        axios
+            .get(
+                `https://api.opensea.io/api/v1/assets?owner=${walletAddress}&order_direction=desc&limit=20&include_orders=false`
+            )
+            .then((res) => {
+                setAssets(res.data.assets);
+                setLoading(false);
+            });
+    };
+    console.log(assets, "##");
     return (
         <div className="DetailBody">
             <div className="search">
@@ -27,16 +38,22 @@ function DetailBody_SW() {
                         placeholder="search"
                         name="search"
                         id="search"
+                        onChange={(e) =>
+                            setWalletAddress(e.currentTarget.value)
+                        }
                         required
                     />
                     <label for="search" className="form__label">
                         Search
                     </label>
-                    <div onClick={searchWalletClick}>
+                    <div onClick={fetchWalletInfo}>
                         <FontAwesomeIcon icon={faSearch} size="2x" />
                     </div>
                 </div>
-                <div id="result"></div>
+                {loading && <Spinner />}
+                {assets.map((assetData) => {
+                    return <Card assetData={assetData} />;
+                })}
             </div>
         </div>
     );

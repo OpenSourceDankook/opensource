@@ -8,8 +8,6 @@ import { Link } from "react-router-dom";
 import "./Main.css";
 
 function Main() {
-    const { nftData } = useContext(OpenseaContext);
-    console.log(nftData, "Data Status");
     return (
         <div className="main">
             <Header />
