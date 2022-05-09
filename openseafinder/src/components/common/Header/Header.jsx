@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import React from "react";
 import "./Header.css";
-import { Mobile, PC } from "../mediaQuery.tsx"
 
 function Header() {
   function detailClick(e) {
@@ -18,7 +17,6 @@ function Header() {
   return (
     <div className="header">
       <div className="menuWrapper">
-        <PC>
           <div className="menuItem" onClick={detailSWClick}>
             <span>Search Wallet</span>
           </div>
@@ -28,10 +26,6 @@ function Header() {
           <div className="menuItem" onClick={docsClick}>
             <span>Docs</span>
           </div>
-        </PC>
-        <Mobile>
-          모바일
-        </Mobile>
       </div>
     </div>
   );
