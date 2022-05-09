@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 import "./Detail.css";
 
 function Detail_SW() {
-  return (
-    <div className="detail">
-      <Header />
-      <DetailBody_SW />
-      <Card />
-    </div>
-  );
+    return (
+        <div className="detail">
+            <Header />
+            <DetailBody_SW />
+        </div>
+    );
 }
 
 export default Detail_SW;
