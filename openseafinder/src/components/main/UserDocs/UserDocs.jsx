@@ -1,5 +1,6 @@
 import React from "react";
 import "./UserDocs.css";
+import { Desktop, Mobile } from "../../common/MediaQuery";
 
 function UserDocs() {
   const walletInfo =
@@ -8,29 +9,53 @@ function UserDocs() {
     "블록기술을 이용해서 디지털 자산의 소유주를 증명하는 가상의 토큰 대상이 되는 그림, 영상 등의 디지털 파일을 가리키는 주소를 토큰안에 담음으로써 일종의 가상 진품 증명서";
   return (
     <div className="userDocs">
-      <div className="userDocsHeader">
-        <div className="userDocsTitle">
-          <span>USER DOCS</span>
-        </div>
-        <div className="userDocsDesc">
-          <span>NFT finder 는 사용자 가이드를 제공하고 있습니다.</span>
-        </div>
-      </div>
-      <div className="userDocsBody">
-        <div className="cardItem">
-          <div className="cardTitle">
-            <h2>WALLET INFO</h2>
-          </div>
-          <div className="cardDetail">{walletInfo}</div>
-        </div>
-        <div className="logoWrapper"> LOGO </div>
-        <div className="cardItem">
-          <div className="cardTitle">
-            <h2>NFT INFO</h2>
-          </div>
-          <div className="cardDetail">{nftInfo}</div>
-        </div>
-      </div>
+        <Desktop>
+            <div className="desktopUserDocs">
+                <div className="userDocsHeader">
+                    <div className="userDocsTitle">
+                        <span>USER DOCS</span>
+                    </div>
+                    <div className="userDocsDesc">
+                        <span>NFT finder 는 사용자 가이드를 제공하고 있습니다.</span>
+                    </div>
+                </div>
+                <div className="userDocsBody">
+                    <div className="cardItem">
+                        <div className="cardTitle">
+                            <h2>WALLET INFO</h2>
+                        </div>
+                        <div className="cardDetail">{walletInfo}</div>
+                    </div>
+                    <div className="logoWrapper"> LOGO </div>
+                    <div className="cardItem">
+                        <div className="cardTitle">
+                            <h2>NFT INFO</h2>
+                        </div>
+                        <div className="cardDetail">{nftInfo}</div>
+                    </div>
+                </div>
+            </div>
+      </Desktop>
+      <Mobile>
+            <div className="mobileUserDocs">
+                <div className="userDocsHeader">
+                    <div className="userDocsTitle">
+                        <span>USER DOCS</span>
+                    </div>
+                    <div className="userDocsDesc">
+                        <span>NFT finder 는 사용자 가이드를 제공하고 있습니다.</span>
+                    </div>
+                </div>
+                <div className="userDocsBody">
+                    <div className="cardItem">
+                        <h4>WALLET INFO</h4>
+                        <span>{walletInfo}</span><br/><br/><br/>
+                        <h4>NFT INFO</h4>
+                        <span>{nftInfo}</span>
+                    </div>
+                </div>
+            </div>
+      </Mobile>
     </div>
   );
 }
