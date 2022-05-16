@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 import "./Header.css";
+import { Desktop, Mobile } from "../MediaQuery.jsx";
 
 function Header() {
   function detailClick(e) {
@@ -15,33 +15,6 @@ function Header() {
     document.body.scrollTop = document.body.scrollHeight;
   }
 
-  const Desktop = ({ children }) => {
-    const isDesktop = useMediaQuery({ minWidth: 992 });
-    return isDesktop ? children : null;
-  };
-  const Tablet = ({ children }) => {
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
-    return isTablet ? children : null;
-  };
-  const Mobile = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 767 });
-    return isMobile ? children : null;
-  };
-  const Default = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 768 });
-    return isNotMobile ? children : null;
-  };
-  /*
-  const Example = () => (
-    <div className="header" style="font-size:2rem; color:white;">
-      <Desktop>Desktop or laptop</Desktop>
-      <Tablet>Tablet</Tablet>
-      <Mobile>Mobile</Mobile>
-      <Default>Not mobile (desktop or laptop or tablet)</Default>
-    </div>
-  );
-
-  */
   return (
     <>
       <Desktop>
@@ -59,15 +32,6 @@ function Header() {
           </div>
         </div>
       </Desktop>
-      <Tablet>
-        <div className="header">
-          <div className="menuWrapper">
-            <div className="menuItem" onClick={detailSWClick}>
-              <span>Search Wallet</span>
-            </div>
-          </div>
-        </div>
-      </Tablet>
       <Mobile>
         <div className="header">
           <div className="menuWrapper">
