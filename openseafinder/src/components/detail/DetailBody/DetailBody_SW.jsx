@@ -28,7 +28,7 @@ function DetailBody_SW() {
             <div className="search">
                 <div className="explain">
                     <div className="explainText">
-                        <span>확인하려고 하는 NFT 지갑 주소를 입력하세요.</span>
+                        <span>NFT 지갑 주소를 입력하세요.</span>
                     </div>
                 </div>
                 <div className="form__group field">
