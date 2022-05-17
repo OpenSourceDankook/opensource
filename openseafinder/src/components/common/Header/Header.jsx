@@ -24,7 +24,8 @@ function Header() {
     setMenu(isOpen => !isOpen);
   }
   function buttonClick(e){
-    window.location.href = "/detail"; //수정예정
+    //window.location.href = "/detail"; //수정예정
+
   }
   
 
@@ -47,7 +48,7 @@ function Header() {
       </Desktop>
       <Mobile>
         <div className="header">
-          <div className="menuWrapper">
+          <div className={isOpen ? "show-menuWrapper" : "menuWrapper"}>
             <div className="menuItem" onClick={detailSWClick}>
               <span>Search Wallet</span>
             </div>
@@ -58,10 +59,8 @@ function Header() {
               <span>Docs</span>
             </div>
           </div>
-          <div className ="button" > 
+          <div className ="show-menu" onClick = {toggleMenu} > 
             <FontAwesomeIcon icon={ faBars }  />
-            {/* <div className={isOpen ? "show-menu" : "hide-menu"}></div> */}
-              
           </div>
         </div>
         

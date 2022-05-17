@@ -29,13 +29,8 @@
     color:rgb(179, 179, 179);
     cursor: pointer;
 }
-.button{
+.show-menu{
     display: none;
-    position: absolute;
-    right: 15px;
-    font-size: 24px;
-    color: white;
-    
 }
 @media screen and (max-width:768px) {
     
@@ -49,17 +44,27 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        
+    }
+    .show-menuWrapper{
+        margin-bottom: -50px;
+        display: block;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
     }
     .menuItem{
         width: 100%;
         text-align: center;
+        cursor: pointer;
         
     }
-    .button {
+    .show-menu {
         display: block;
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
     }
     
-    
-
 }
