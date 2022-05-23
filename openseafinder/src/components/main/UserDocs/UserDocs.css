@@ -1,10 +1,10 @@
-.userDocs{
+.userDocs {
   width: 100%;
   height: 60vh;
-  background-color: #e8eaf3;
+  background-color: white;
 }
 
-.desktopUserDocs{
+.desktopUserDocs {
   padding-top: 50px;
 }
 
@@ -26,13 +26,13 @@
   font-weight: 800;
 }
 
-.desktopUserDocs .userDocsHeader .userDocsDesc{
+.desktopUserDocs .userDocsHeader .userDocsDesc {
   margin-bottom: 30px;
 }
 
 .desktopUserDocs .userDocsHeader .userDocsDesc span {
   font-size: 24px;
-  color:black;
+  color: black;
 }
 
 .desktopUserDocs .userDocsBody {
@@ -45,13 +45,13 @@
 
 .desktopUserDocs .userDocsBody .cardItem {
   width: 330px;
-  background-color: #ffffff;
+  background-color: #e8eaf3;
   border-radius: 15px;
   padding: 20px;
   height: 380px;
 }
 
-.desktopUserDocs .userDocsBody .cardItem  .cardTitle {
+.desktopUserDocs .userDocsBody .cardItem .cardTitle {
   width: 100%;
   height: 20%;
   text-align: center;
@@ -61,12 +61,10 @@
 .desktopUserDocs .userDocsBody .cardItem .cardDetail {
   width: 100%;
   line-height: 190%;
-  font-size:19px;
+  font-size: 19px;
 }
 
-
-
-.mobileUserDocs{
+.mobileUserDocs {
   padding-top: 50px;
 }
 
@@ -87,13 +85,13 @@
   font-weight: 800;
 }
 
-.mobileUserDocs .userDocsHeader .userDocsDesc{
+.mobileUserDocs .userDocsHeader .userDocsDesc {
   margin-bottom: 30px;
 }
 
 .mobileUserDocs .userDocsHeader .userDocsDesc span {
   font-size: 18px;
-  color:black;
+  color: black;
 }
 
 .mobileUserDocs .userDocsBody {
@@ -107,7 +105,7 @@
 .mobileUserDocs .userDocsBody .cardItem {
   width: 70%;
   background-color: #ffffff;
-  height:400px;
+  height: 400px;
   border-radius: 15px;
   margin-bottom: 10px;
   padding: 60px 45px;
