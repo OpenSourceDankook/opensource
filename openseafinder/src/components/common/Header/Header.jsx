@@ -8,6 +8,9 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function Header() {
+  function homeClick(e){
+    window.location.replace("/");
+  }
   function detailClick(e) {
     window.location.href = "/detail";
   }
@@ -26,7 +29,7 @@ function Header() {
     if (isOpen) {
       header.style.height = "4vh";
     } else {
-      header.style.height = "17vh";
+      header.style.height = "20vh";
     }
   };
 
@@ -34,6 +37,9 @@ function Header() {
     <>
       <Desktop>
         <div className="header">
+          <div className="title" onClick={homeClick}>
+            <span>OpenSea Price Finder</span>
+          </div>
           <div className="menuWrapper">
             <div className="menuItem" onClick={detailSWClick}>
               <span>Search Wallet</span>
@@ -50,7 +56,7 @@ function Header() {
       <Mobile>
         <div className="header" id="moblie_header">
           <div className={isOpen ? "show-menuWrapper" : "menuWrapper"}>
-            <div className="menuItem" onClick={detailSWClick}>
+            <div className="menuItem" id="top" onClick={detailSWClick}>
               <span>Search Wallet</span>
             </div>
             <div className="menuItem" onClick={detailClick}>
@@ -60,8 +66,13 @@ function Header() {
               <span>Docs</span>
             </div>
           </div>
-          <div className="show-menu" onClick={toggleMenu}>
-            <FontAwesomeIcon icon={faBars} />
+          <div className="show-menu">
+            <div className="title" onClick={homeClick}>
+              <span>OpenSea Price Finder</span>
+            </div>
+            <div className="bar" onClick={toggleMenu}>
+              <FontAwesomeIcon icon={faBars} />
+            </div>
           </div>
         </div>
       </Mobile>

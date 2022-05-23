@@ -1,47 +1,70 @@
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 6vh;
-  background-color: black;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.menuWrapper {
-  width: 40%;
-  height: 100%;
-  /* border: 4px solid pink; */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.menuItem span {
-  font-size: 24px;
-  color: #fff;
-  font-weight: 800;
-  cursor: default;
-}
-
-.menuItem span:hover {
-  color: rgb(179, 179, 179);
-  cursor: pointer;
-}
-.show-menu {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 4vh;
-    /*height: 17vh;*/
+    height: 6vh;
     background-color: black;
     display: flex;
+    color:white;
+  }
+
+  .title{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    justify-content: flex-start;
+  }
+
+  .title span {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 800;
+    cursor: default;
+  }
+
+  .title span:hover{
+    color: rgb(179, 179, 179);
+    cursor: pointer;
+  }
+
+  .menuWrapper {
+    width: 85%;
+    height: 100%;
+    /* border: 4px solid pink; */
+    display: flex;
     justify-content: flex-end;
+    align-items: center;
+  }
+
+  .menuItem{
+    margin-left: 80px;
+  }
+  .menuItem span {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 800;
+    cursor: default;
+  }
+
+  .menuItem span:hover {
+    color: rgb(179, 179, 179);
+    cursor: pointer;
+  }
+  .show-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: fixed;
+    width: 100%;
+    height: 4vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
   }
   .menuWrapper {
     display: none;
@@ -53,6 +76,10 @@
     flex-direction: column;
     width: 100%;
   }
+
+  #top{
+    padding-top: 30px;
+  }
   .menuItem {
     width: 100%;
     text-align: center;
@@ -62,14 +89,54 @@
 
   .menuItem span {
     font-size: 18px;
+    color: white;
   }
 
   .show-menu {
     display: block;
     position: absolute;
-    right: 15px;
     font-size: 24px;
     color: white;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+  }
+
+  .title{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .title span {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 800;
+    cursor: default;
+  }
+
+  .title span:hover{
+    color: rgb(179, 179, 179);
+    cursor: pointer;
+  }
+
+  .show-menu span{
+    font-size: 24px;
+    color: #fff;
+    font-weight: 800;
+    cursor: default;
+  }
+
+  .bar{
+    position: absolute;
+    top:0;
+    right: 15px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .menuItem span:hover {
+    color: rgb(179, 179, 179);
     cursor: pointer;
   }
 }
