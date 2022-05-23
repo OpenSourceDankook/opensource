@@ -5,7 +5,7 @@ import { Desktop, Mobile } from "../MediaQuery.jsx";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
-import {useState} from "react";
+import { useState } from "react";
 
 function Header() {
   function detailClick(e) {
@@ -18,12 +18,17 @@ function Header() {
     window.location.replace("/");
     document.body.scrollTop = document.body.scrollHeight;
   }
-  
+
   const [isOpen, setMenu] = useState(false);
-  const toggleMenu = () =>{
-    setMenu(isOpen => !isOpen);
-  }
-  
+  const toggleMenu = () => {
+    setMenu((isOpen) => !isOpen);
+    var header = document.getElementById("moblie_header");
+    if (isOpen) {
+      header.style.height = "4vh";
+    } else {
+      header.style.height = "17vh";
+    }
+  };
 
   return (
     <>
@@ -43,7 +48,7 @@ function Header() {
         </div>
       </Desktop>
       <Mobile>
-        <div className="header">
+        <div className="header" id="moblie_header">
           <div className={isOpen ? "show-menuWrapper" : "menuWrapper"}>
             <div className="menuItem" onClick={detailSWClick}>
               <span>Search Wallet</span>
@@ -55,11 +60,10 @@ function Header() {
               <span>Docs</span>
             </div>
           </div>
-          <div className ="show-menu" onClick = {toggleMenu} > 
-            <FontAwesomeIcon icon={ faBars }  />
+          <div className="show-menu" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} />
           </div>
         </div>
-        
       </Mobile>
     </>
   );
