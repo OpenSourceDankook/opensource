@@ -23,10 +23,6 @@ function Header() {
   const toggleMenu = () =>{
     setMenu(isOpen => !isOpen);
   }
-  function buttonClick(e){
-    //window.location.href = "/detail"; //수정예정
-
-  }
   
 
   return (
