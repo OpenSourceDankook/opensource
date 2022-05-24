@@ -29,9 +29,11 @@ function Card({ assetData }) {
           </Desktop>
           <Mobile>
           <a href={assetData.external_link}>
+            <div class="cardParent">
               <div class="cardMobile">
                   <img src={assetData.image_preview_url} />
               </div>
+            </div>
             </a>
           </Mobile>
         </>

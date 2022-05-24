@@ -13,7 +13,18 @@ function DetailBody_SW() {
 
     const fetchWalletInfo = () => {
         setLoading(true);
-        axios
+        if(!walletAddress){
+            axios
+            .get(
+                `https://api.opensea.io/graphql/`
+            )
+            .then((res) => {
+                setAssets(res.data.assets);
+                setLoading(false);
+            });
+        }
+        else{
+            axios
             .get(
                 `https://api.opensea.io/api/v1/assets?owner=${walletAddress}&order_direction=desc&limit=20&include_orders=false`
             )
@@ -21,7 +32,9 @@ function DetailBody_SW() {
                 setAssets(res.data.assets);
                 setLoading(false);
             });
+        }
     };
+    
     console.log(assets, "##");
     return (
         <div className="DetailBody">
