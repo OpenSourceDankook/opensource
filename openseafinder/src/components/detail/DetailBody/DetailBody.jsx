@@ -4,11 +4,26 @@ import "./DetailBody.css";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Spinner, Badge, Card } from "reactstrap";
+const item_list = [
+    {id:0, data: '바닥가격'},
+    {id:1, data: '발행 NFT 수량'},
+    {id:2, data: '소유자 수'},
+    {id:3, data: '금일 평균 거래 가격'},
+    {id:4, data: '전체 거래량'},
+];
 
 function DetailBody() {
     const [projectInputValue, setProjectInputValue] = useState("");
     const [projectInfo, setProjectInfo] = useState();
     const [loading, setLoading] = useState(false);
+    const [checkedList, setCheckedList] =useState([]);
+    const onCheckedElement = (checked,item) =>{
+        if (checked){
+            setCheckedList([...checkedList,item]);
+        }else if(!checked){
+            setCheckedList(checkedList.filter(el => el !==item));
+        }
+    };
 
     const fetchPriceInfo = () => {
         setLoading(true);
@@ -56,19 +71,33 @@ function DetailBody() {
                     />
                 </div>
             </div>
+            <div className="message">{checkedList.length === 0 && ('보고 싶은 데이터를 체크해주세요')}</div>
+            <div className="checklist">
+                {item_list.map((item) => (
+                    <label className="item_label">
+                        <input
+                        key={item.id} type = "checkbox" value={item.data}
+                        onChange={(e)=> onCheckedElement(e.target.checked,item)}
+                        checked={checkedList.includes(item)?true:false}></input> {item.data}
+                    </label>
+                )
+                )}
+                
+            </div>
+
             {!projectInfo && (
             <div className="projectInfoBoxWrapper">
                 <div className="projectBox">
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                바닥가격
-                            </Badge>
-                            <span>
+                    <div className="projectBoxItem">
+                        <Badge
+                            size="lg"
+                            className="badge"
+                            pill
+                            color="primary"
+                        >
+                            바닥가격
+                        </Badge>
+                        <span>
                                 NFT 등급 중 가장 낮은 수준으로 올라와 있는 가격
                             </span>
                         </div>
