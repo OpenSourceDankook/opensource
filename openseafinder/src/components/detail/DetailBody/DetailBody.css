@@ -138,3 +138,11 @@
 .display_none{
     display: none;
 }
+.item_label{
+    width:auto;
+    padding: 7px;
+}
+.message{
+    width:auto;
+    
+}
