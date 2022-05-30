@@ -26,6 +26,10 @@
   font-weight: 800;
 }
 
+.desktopDevDocs .devDocsDesc  {
+  margin: 0 50px ;
+}
+
 .desktopDevDocs .devDocsDesc span {
   font-size: 24px;
 }

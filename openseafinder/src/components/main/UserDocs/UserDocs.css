@@ -45,10 +45,10 @@
 
 .desktopUserDocs .userDocsBody .cardItem {
   width: 330px;
+  height: 450px;
   background-color: #e8eaf3;
   border-radius: 15px;
   padding: 20px;
-  height: 380px;
 }
 
 .desktopUserDocs .userDocsBody .cardItem .cardTitle {
@@ -61,7 +61,7 @@
 .desktopUserDocs .userDocsBody .cardItem .cardDetail {
   width: 100%;
   line-height: 190%;
-  font-size: 1vw;
+  font-size: 0.9vw;
 }
 
 .desktopUserDocs .logoWrapper {
