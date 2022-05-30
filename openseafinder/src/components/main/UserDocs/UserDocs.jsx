@@ -26,9 +26,7 @@ function UserDocs() {
               </div>
               <div className="cardDetail">{walletInfo}</div>
             </div>
-            <div className="logoWrapper">
-              <img className="logo" src="img/logo.PNG" />
-            </div>
+            <div className="logoWrapper"></div>
             <div className="cardItem">
               <div className="cardTitle">
                 <h2>NFT INFO</h2>

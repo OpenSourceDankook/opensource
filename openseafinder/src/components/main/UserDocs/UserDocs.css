@@ -61,7 +61,16 @@
 .desktopUserDocs .userDocsBody .cardItem .cardDetail {
   width: 100%;
   line-height: 190%;
-  font-size: 19px;
+  font-size: 1vw;
+}
+
+.desktopUserDocs .logoWrapper {
+  width: 400px;
+  height: 350px;
+  background-image: url(img/logo.PNG);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .mobileUserDocs {
@@ -104,10 +113,10 @@
 
 .mobileUserDocs .userDocsBody .cardItem {
   width: 70%;
-  background-color: #ffffff;
+  background-color: #e8eaf3;
   height: 400px;
   border-radius: 15px;
   margin-bottom: 10px;
-  padding: 60px 45px;
+  padding: 45px 45px;
   text-align: center;
 }
