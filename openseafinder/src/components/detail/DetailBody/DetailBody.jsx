@@ -5,18 +5,27 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Spinner, Badge, Card } from "reactstrap";
 const item_list = [
-    {id:0, data: '바닥가격', checked:false},
-    {id:1, data: '발행 NFT 수량', checked:false},
-    {id:2, data: '소유자 수', checked:false},
-    {id:3, data: '금일 평균 거래 가격', checked:false},
-    {id:4, data: '전체 거래량', checked:false},
+    {id:0, data: '바닥가격'},
+    {id:1, data: '발행 NFT 수량'},
+    {id:2, data: '소유자 수'},
+    {id:3, data: '금일 평균 거래 가격'},
+    {id:4, data: '전체 거래량'},
 ];
+
+const value_list = [
+    {id:0, value:0},
+    {id:1, value:0},
+    {id:2, value:0},
+    {id:3, value:0},
+    {id:4, value:0}
+]
 
 function DetailBody() {
     const [projectInputValue, setProjectInputValue] = useState("");
     const [projectInfo, setProjectInfo] = useState();
     const [loading, setLoading] = useState(false);
     const [checkedList, setCheckedList] =useState([]);
+    const [checkedValueList, setCheckedValueList] =useState([]);
     const onCheckedElement = (checked,item) =>{
         if (checked){
             setCheckedList([...checkedList,item]);
@@ -28,9 +37,8 @@ function DetailBody() {
         if (checkedList.length === 0){
             //모든 요소를 리스트에
         }
-
     };
-
+    
     const fetchPriceInfo = () => {
         setLoading(true);
         if (projectInputValue) {
@@ -45,6 +53,11 @@ function DetailBody() {
         } else {
             return false;
         }
+        value_list[0].value = projectInfo.floor_price
+        value_list[1].value =projectInfo.count
+        value_list[2].value =projectInfo.num_owners
+        value_list[3].value =projectInfo.one_day_average_price.toFixed(1)
+        value_list[4].value =projectInfo.total_volume.toFixed(1)
     };
     return (
         <div className="DetailBody">
@@ -84,7 +97,8 @@ function DetailBody() {
                             <input
                             key={item.id} type = "checkbox" value={item.data}
                             onChange={(e)=> onCheckedElement(e.target.checked,item)}
-                            checked={checkedList.includes(item)?true:false}></input> {item.data}
+                            checked={checkedList.includes(item)?true:false}>
+                                </input> {item.data}
                         </label>
                     )
                     )}
@@ -165,78 +179,26 @@ function DetailBody() {
             {projectInfo&&(
             <div className="projectInfoBoxWrapper">
                 {loading && <Spinner />}
-                {item_list.map((item) => (
                     <div className="projectBox">
-                        <div className={checkedList.includes(item)? "projectBoxItem" : "display_none"}>
+                    {item_list.map((item) => (
+                        <div className={ checkedList.includes(item) ? "projectBoxItem" : "display_none"}>
                             <Badge
                                 size="lg"
                                 className="badge"
                                 pill
                                 color="primary"
                             >
-                                바닥가격
+                                {item.data}
                             </Badge>
                             <span className="badgeValue">
-                                {projectInfo.floor_price}
+                                {value_list[item.id].value}
                             </span>
                         </div>
-                        <div className={checkedList.includes(item)? "projectBoxItem" : "display_none"}>
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                발행 NFT 수량
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.count}
-                            </span>
-                        </div>
-                        <div className={checkedList.includes(item)? "projectBoxItem" : "display_none"}>
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                소유자 수
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.num_owners}
-                            </span>
-                        </div>
-                        <div className={checkedList.includes(item)? "projectBoxItem" : "display_none"}>
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                금일 평균 거래 가격
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.one_day_average_price.toFixed(1)}
-                            </span>
-                        </div>
-                        <div className={checkedList.includes(item)? "projectBoxItem" : "display_none"}>
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                전체 거래량
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.total_volume.toFixed(1)}
-                            </span>
+                        ))}
                         </div>
                     </div>
-                    ))}
+                    )}
             </div>
-            )}
-        </div>
     );
 }
 
