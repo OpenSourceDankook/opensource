@@ -11,6 +11,13 @@ const item_list = [
     {id:3, data: '금일 평균 거래 가격'},
     {id:4, data: '전체 거래량'},
 ];
+const value_list = [
+    {id:0, value:0},
+    {id:1, value:1},
+    {id:2, value:2},
+    {id:3, value:3},
+    {id:4, value:4}
+];
 
 function DetailBody() {
     const [projectInputValue, setProjectInputValue] = useState("");
@@ -39,6 +46,11 @@ function DetailBody() {
         } else {
             return false;
         }
+        value_list[0].value = projectInfo.floor_price;
+        value_list[1].value =projectInfo.count;
+        value_list[2].value =projectInfo.num_owners;
+        value_list[3].value =projectInfo.one_day_average_price.toFixed(1);
+        value_list[4].value =projectInfo.total_volume.toFixed(1);
     };
     return (
         <div className="DetailBody">
@@ -71,18 +83,19 @@ function DetailBody() {
                     />
                 </div>
             </div>
-            <div className="message">{checkedList.length === 0 && ('보고 싶은 데이터를 체크해주세요')}</div>
-            <div className="checklist">
-                {item_list.map((item) => (
-                    <label className="item_label">
-                        <input
-                        key={item.id} type = "checkbox" value={item.data}
-                        onChange={(e)=> onCheckedElement(e.target.checked,item)}
-                        checked={checkedList.includes(item)?true:false}></input> {item.data}
-                    </label>
-                )
-                )}
-                
+            <div className="message">{checkedList.length === 0 && ('보고 싶은 데이터를 체크해주세요')}
+                <div className="checklist">
+                    {item_list.map((item) => (
+                        <label className="item_label">
+                            <input
+                            key={item.id} type = "checkbox" value={item.data}
+                            onChange={(e)=> onCheckedElement(e.target.checked,item)}
+                            checked={checkedList.includes(item)?true:false}>
+                                </input> {item.data}
+                        </label>
+                    )
+                    )}
+                </div>
             </div>
 
             {!projectInfo && (
@@ -160,75 +173,25 @@ function DetailBody() {
             <div className="projectInfoBoxWrapper">
                 {loading && <Spinner />}
                     <div className="projectBox">
-                        <div className="projectBoxItem">
+                    {item_list.map((item) => (
+                        <div className={ checkedList.includes(item) ? "projectBoxItem" : "display_none"}>
                             <Badge
                                 size="lg"
                                 className="badge"
                                 pill
                                 color="primary"
                             >
-                                바닥가격
+                                {item.data}
                             </Badge>
                             <span className="badgeValue">
-                                {projectInfo.floor_price}
+                                {value_list[item.id].value}
                             </span>
                         </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                발행 NFT 수량
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.count}
-                            </span>
-                        </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                소유자 수
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.num_owners}
-                            </span>
-                        </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                금일 평균 거래 가격
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.one_day_average_price.toFixed(1)}
-                            </span>
-                        </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                전체 거래량
-                            </Badge>
-                            <span className="badgeValue">
-                                {projectInfo.total_volume.toFixed(1)}
-                            </span>
+                        ))}
                         </div>
                     </div>
+                    )}
             </div>
-            )}
-        </div>
     );
 }
 
