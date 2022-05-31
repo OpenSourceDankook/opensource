@@ -10,21 +10,10 @@ function DetailBody_SW() {
     const [walletAddress, setWalletAddress] = useState("");
     const [loading, setLoading] = useState(false);
     const [assets, setAssets] = useState([]);
-
+    const [fetch, setFetching] = useState(false);
     const fetchWalletInfo = () => {
         setLoading(true);
-        if(!walletAddress){
-            axios
-            .get(
-                `https://api.opensea.io/graphql/`
-            )
-            .then((res) => {
-                setAssets(res.data.assets);
-                setLoading(false);
-            });
-        }
-        else{
-            axios
+        axios
             .get(
                 `https://api.opensea.io/api/v1/assets?owner=${walletAddress}&order_direction=desc&limit=20&include_orders=false`
             )
@@ -32,9 +21,25 @@ function DetailBody_SW() {
                 setAssets(res.data.assets);
                 setLoading(false);
             });
-        }
     };
     
+    const firstFetch=()=>{
+        setFetching(true);
+        setLoading(true);
+        axios
+            .get(
+                `https://api.opensea.io/api/v1/assets?order_direction=desc&limit=20&include_orders=false`
+            )
+            .then((res) => {
+                setAssets(res.data.assets);
+                setLoading(false);
+            });
+    }
+
+    const test=() => {
+        return (<div>hello</div>);
+    }
+
     console.log(assets, "##");
     return (
         <div className="DetailBody">
@@ -56,12 +61,13 @@ function DetailBody_SW() {
                         }
                         required
                     />
-                    <label for="search" className="form__label">
+                    <label htmlFor="search" className="form__label">
                         Search
                     </label>
                     <div onClick={fetchWalletInfo}>
                         <FontAwesomeIcon icon={faSearch} size="2x" />
                     </div>
+                    {!fetch&&<div>{firstFetch()}</div>}
                 </div>
                 {loading && <Spinner />}
                 {assets.map((assetData) => {
