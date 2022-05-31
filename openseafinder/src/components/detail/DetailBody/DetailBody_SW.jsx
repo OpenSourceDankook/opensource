@@ -35,11 +35,7 @@ function DetailBody_SW() {
                 setLoading(false);
             });
     }
-
-    const test=() => {
-        return (<div>hello</div>);
-    }
-
+    
     console.log(assets, "##");
     return (
         <div className="DetailBody">
