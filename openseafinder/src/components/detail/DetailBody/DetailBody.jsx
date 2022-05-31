@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import axios from "axios";
 import "./DetailBody.css";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -25,7 +25,6 @@ function DetailBody() {
     const [projectInfo, setProjectInfo] = useState();
     const [loading, setLoading] = useState(false);
     const [checkedList, setCheckedList] =useState([]);
-    const [checkedValueList, setCheckedValueList] =useState([]);
     const onCheckedElement = (checked,item) =>{
         if (checked){
             setCheckedList([...checkedList,item]);
@@ -33,11 +32,16 @@ function DetailBody() {
             setCheckedList(checkedList.filter(el => el !==item));
         }
     };
-    const onCheckedAll = (item) => {
-        if (checkedList.length === 0){
-            //모든 요소를 리스트에
+    const onCheckedAll = (checked) => {
+        if(checked){
+            const checkedListArray = [];
+            item_list.forEach((list)=>checkedListArray.push(list));
+            setCheckedList(checkedListArray);
         }
-    };
+        else{
+            setCheckedList([]);
+        }
+    }; 
     
     const fetchPriceInfo = () => {
         setLoading(true);
@@ -68,7 +72,7 @@ function DetailBody() {
                     </div>
                 </div>
                 <div className="form__group field">
-                    <input
+                    <input 
                         type="input"
                         className="form__field"
                         placeholder="search"
@@ -90,7 +94,8 @@ function DetailBody() {
                     />
                 </div>
             </div>
-            <div className="message">{checkedList.length === 0 && ('보고 싶은 데이터를 체크해주세요')}
+            <div className="message">
+            {checkedList.length === 0 && ('보고 싶은 데이터를 체크해주세요')}
                 <div className="checklist">
                     {item_list.map((item) => (
                         <label className="item_label">
