@@ -48,13 +48,12 @@ function UserDocs() {
           </div>
           <div className="userDocsBody">
             <div className="cardItem">
-              <h4>WALLET INFO</h4>
-              <span>{walletInfo}</span>
+              <h6>WALLET INFO</h6>
+              <div className="cardDetail">{walletInfo}</div>
               <br />
               <br />
-              <br />
-              <h4>NFT INFO</h4>
-              <span>{nftInfo}</span>
+              <h6>NFT INFO</h6>
+              <div className="cardDetail">{nftInfo}</div>
             </div>
           </div>
         </div>

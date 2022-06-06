@@ -17,7 +17,6 @@
 
 .cardParent{
     width: 100%;
-    margin:10px auto;
 }
 
 .card{
@@ -30,5 +29,5 @@
     display: flex;
     justify-content: center;
     box-shadow: 0 70px 63px -60px #000;
-    margin: 50px;
+    margin: 60px;
 }

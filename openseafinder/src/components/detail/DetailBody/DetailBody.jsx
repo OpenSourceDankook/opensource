@@ -114,66 +114,66 @@ function DetailBody() {
                             size="lg"
                             className="badge"
                             pill
-                            color="primary"
+                            color="secondary"
                         >
                             바닥가격
                         </Badge>
                         <span>
                                 NFT 등급 중 가장 낮은 수준으로 올라와 있는 가격
-                            </span>
-                        </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                발행 NFT 수량
-                            </Badge>
-                            <span>
-                                발행 가능한 NFT의 수량
-                            </span>
-                        </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                소유자 수
-                            </Badge>
-                            <span>
-                                해당 NFT의 소유자의 수
-                            </span>
-                        </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                금일 평균 거래 가격
-                            </Badge>
-                            <span>
-                                오늘 날짜의 해당 NFT의 평균 거래 가격
-                            </span>
-                        </div>
-                        <div className="projectBoxItem">
-                            <Badge
-                                size="lg"
-                                className="badge"
-                                pill
-                                color="primary"
-                            >
-                                전체 거래량
-                            </Badge>
-                            <span>
-                                해당 NFT의 전체 거래량
-                            </span>
-                        </div>
+                        </span>
+                    </div>
+                    <div className="projectBoxItem">
+                        <Badge
+                            size="lg"
+                            className="badge"
+                            pill
+                            color="secondary"
+                        >
+                            발행 NFT 수량
+                        </Badge>
+                        <span>
+                            발행 가능한 NFT의 수량
+                        </span>
+                    </div>
+                    <div className="projectBoxItem">
+                        <Badge
+                            size="lg"
+                            className="badge"
+                            pill
+                            color="secondary"
+                        >
+                            소유자 수
+                        </Badge>
+                        <span>
+                            해당 NFT의 소유자의 수
+                        </span>
+                    </div>
+                    <div className="projectBoxItem">
+                        <Badge
+                            size="lg"
+                            className="badge"
+                            pill
+                            color="secondary"
+                        >
+                            금일 평균 거래 가격
+                        </Badge>
+                        <span>
+                            오늘 날짜의 해당 NFT의 평균 거래 가격
+                        </span>
+                    </div>
+                    <div className="projectBoxItem">
+                        <Badge
+                            size="lg"
+                            className="badge"
+                            pill
+                            color="secondary"
+                        >
+                            전체 거래량
+                        </Badge>
+                        <span>
+                            해당 NFT의 전체 거래량
+                        </span>
+                    </div>
                 </div>
             </div>
             )}

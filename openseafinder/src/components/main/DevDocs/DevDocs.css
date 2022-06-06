@@ -1,6 +1,6 @@
 .devDocs {
   height: 40vh;
-  background-color: white;
+  background-color: rgb(246, 247, 248);;
 }
 
 .desktopDevDocs {
@@ -22,7 +22,7 @@
 }
 
 .desktopDevDocs .devDocsTitle span {
-  font-size: 42px;
+  font-size: 5vh;
   font-weight: 800;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .desktopDevDocs .devDocsDesc span {
-  font-size: 24px;
+  font-size: 3vh;
 }
 
 .desktopDevDocs .devDocsBody {
@@ -45,6 +45,7 @@
   white-space: pre-line;
   border-radius: 15px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .desktopDevDocs .devDocsBody:hover {
@@ -71,16 +72,16 @@
 }
 
 .mobileDevDocs .devDocsTitle span {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 3.3vh;
+
 }
 
 .mobileDevDocs .devDocsDesc {
-  width: 70%;
+  width: 90%;
 }
 
 .mobileDevDocs .devDocsDesc span {
-  font-size: 18px;
+  font-size:1.9vh;
 }
 
 .mobileDevDocs .devDocsBody {
