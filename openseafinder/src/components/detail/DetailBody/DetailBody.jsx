@@ -48,12 +48,12 @@ function DetailBody() {
                 )
                 .then((res) => {
                     setProjectInfo(res.data.stats);
-                    setLoading(false);
                     value_list[0].value = projectInfo.floor_price;
                     value_list[1].value =projectInfo.count;
                     value_list[2].value =projectInfo.num_owners;
                     value_list[3].value =projectInfo.one_day_average_price.toFixed(1);
                     value_list[4].value =projectInfo.total_volume.toFixed(1);
+                    setLoading(false);
                 });
         } else {
             return false;
