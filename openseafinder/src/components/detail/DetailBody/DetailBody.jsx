@@ -17,7 +17,7 @@ const value_list = [
     {id:1, value:0},
     {id:2, value:0},
     {id:3, value:0},
-    {id:4, value:0}
+    {id:4, value:0},
 ]
 
 function DetailBody() {
@@ -37,6 +37,7 @@ function DetailBody() {
             const checkedListArray = [];
             item_list.forEach((list)=>checkedListArray.push(list));
             setCheckedList(checkedListArray);
+            console.log(checkedListArray);
         }
         else{
             setCheckedList([]);
@@ -52,16 +53,17 @@ function DetailBody() {
                 )
                 .then((res) => {
                     setProjectInfo(res.data.stats);
+                    value_list[0].value = projectInfo.floor_price
+                    value_list[1].value =projectInfo.count
+                    value_list[2].value =projectInfo.num_owners
+                    value_list[3].value =projectInfo.one_day_average_price.toFixed(1)
+                    value_list[4].value =projectInfo.total_volume.toFixed(1)
                     setLoading(false);
                 });
         } else {
             return false;
         }
-        value_list[0].value = projectInfo.floor_price
-        value_list[1].value =projectInfo.count
-        value_list[2].value =projectInfo.num_owners
-        value_list[3].value =projectInfo.one_day_average_price.toFixed(1)
-        value_list[4].value =projectInfo.total_volume.toFixed(1)
+       
     };
     return (
         <div className="DetailBody">
@@ -97,6 +99,14 @@ function DetailBody() {
             <div className="message">
             {checkedList.length === 0 && ('보고 싶은 데이터를 체크해주세요')}
                 <div className="checklist">
+                    <label className="item_label">
+                            <input
+                             type = "checkbox"
+                             checked={checkedList.length <1 ? true:false} 
+                            onChange={(e)=>onCheckedAll(e.target.checked)}
+                            >
+                                </input> 전체선택
+                    </label>    
                     {item_list.map((item) => (
                         <label className="item_label">
                             <input
@@ -107,6 +117,7 @@ function DetailBody() {
                         </label>
                     )
                     )}
+                    
                 </div>
             </div>
 
