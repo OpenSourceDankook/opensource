@@ -32,9 +32,14 @@ function DetailBody() {
             setCheckedList(checkedList.filter(el => el !==item));
         }
     };
-    const onCheckedAll = (item) => {
-        if (checkedList.length === 0){
-            //모든 요소를 리스트에
+    const onCheckedAll = (checked) => {
+        if(checked){
+            const checkedListArray = [];
+            item_list.forEach((list)=>checkedListArray.push(list));
+            setCheckedList(checkedListArray);
+        }
+        else{
+            setCheckedList([]);
         }
     };
     
@@ -93,6 +98,13 @@ function DetailBody() {
             </div>
             <div className="message">{checkedList.length === 0 && ('보고 싶은 데이터를 체크해주세요')}
                 <div className="checklist">
+                    <label className="item_label">
+                        <input
+                         type = "checkbox"
+                         checked={(checkedList.length !== 0 || checkedList.length !== item_list.length ) ? false : true } 
+                        onChange={(e)=>onCheckedAll(e.target.checked)}>
+                        </input> 전체선택
+                    </label>
                     {item_list.map((item) => (
                         <label className="item_label">
                             <input
